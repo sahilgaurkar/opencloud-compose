@@ -5,7 +5,7 @@ services:
       WEB_OPTION_YJS_SERVER_URL: wss://${OC_DOMAIN:-cloud.opencloud.test}${TRAEFIK_PORT_HTTPS:+:}${TRAEFIK_PORT_HTTPS:-}/yjs
     volumes:
       # the /yjs route is configured in the proxy
-      - ./config/opencloud/proxy.yaml:/etc/opencloud/proxy.yaml
+      - ${OC_CONFIG_DIR}/proxy.yaml:/etc/opencloud/proxy.yaml
   yjs:
     # renovate: depName=opencloudeu/yjs
     image: ${YJS_DOCKER_IMAGE:-opencloudeu/yjs}:${YJS_DOCKER_TAG:-1.1.1}
