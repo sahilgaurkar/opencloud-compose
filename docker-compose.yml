@@ -63,10 +63,10 @@ services:
       - ${OC_CONFIG_DIR:-opencloud-config}:/etc/opencloud
       - ${OC_DATA_DIR:-opencloud-data}:/var/lib/opencloud
       - ${OC_APPS_DIR:-./config/opencloud/apps}:/var/lib/opencloud/web/assets/apps
-      #- ${OC_CONFIG_DIR}/csp.yaml:/etc/opencloud/csp.yaml
-      #- ${OC_CONFIG_DIR}/apps.yaml:/etc/opencloud/apps.yaml
-      #- ${OC_CONFIG_DIR}/apps.yaml:/etc/opencloud/proxy.yaml
-      #- ${OC_CONFIG_DIR}/banned-password-list.txt:/etc/opencloud/banned-password-list.txt
+      - ${OC_CONFIG_DIR}/csp.yaml:/etc/opencloud/csp.yaml
+      - ${OC_CONFIG_DIR}/apps.yaml:/etc/opencloud/apps.yaml
+      - ${OC_CONFIG_DIR}/apps.yaml:/etc/opencloud/proxy.yaml
+      - ${OC_CONFIG_DIR}/banned-password-list.txt:/etc/opencloud/banned-password-list.txt
     logging:
       driver: ${LOG_DRIVER:-local}
     restart: always
